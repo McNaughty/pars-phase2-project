@@ -1,0 +1,94 @@
+{
+    "events" : [
+    {
+      "id": 1,
+      "title": "Tech Summit 2023",
+	  "startdate": "2023-03-20",
+      "enddate": "2023-03-20",
+      "location": "Tech Hub Exhibition Center",
+      "organizer": "TechConnect",
+      "facilitator": "Dr. Allison Williams"
+    },
+    {
+      "id": 2,
+      "title": "Art Expo",
+	  "startdate": "2023-04-05",
+      "enddate": "2023-04-05",
+      "location": "City Art Gallery",
+      "organizer": "Creative Arts Society",
+      "facilitator": "Mr. Benjamin Turner"
+    },
+    {
+      "id": 3,
+      "title": "Fitness Bootcamp",
+	  "startdate": "2023-05-13",
+      "enddate": "2023-05-15",
+      "location": "FitZone Gym",
+      "organizer": "Healthy Living Association",
+      "facilitator": "Coach Maria Rodriguez"
+    },
+    {
+      "id": 4,
+      "title": "Green Innovation Forum",
+	  "startdate": "2023-06-01",
+      "enddate": "2023-06-02",
+      "location": "GreenTech Center",
+      "organizer": "Environmental Solutions Group",
+      "facilitator": "Dr. Jonathan Greenfield"
+    },
+    {
+      "id": 5,
+      "title": "Food Festival",
+	  "startdate": "2023-07-10",
+      "enddate": "2023-07-10",
+      "location": "City Park",
+      "organizer": "Culinary Delights Society",
+      "facilitator": "Chef Olivia Anderson"
+    },
+    {
+      "id": 6,
+      "title": "Music Workshop",
+	  "startdate": "2023-08-14",
+      "enddate": "2023-08-18",
+      "location": "Harmony Music School",
+      "organizer": "Melody Academy",
+      "facilitator": "Professor Carlos Martinez"
+    },
+    {
+      "id": 7,
+      "title": "Health and Wellness Expo",
+	  "startdate": "2023-09-05",
+      "enddate": "2023-09-05",
+      "location": "Wellness Center",
+      "organizer": "Health Harmony Foundation",
+      "facilitator": "Dr. Michelle Lee"
+    },
+    {
+      "id": 8,
+      "title": "Business Networking Mixer",
+	  "startdate": "2023-10-10",
+      "enddate": "2023-10-12",
+      "location": "City Business Hub",
+      "organizer": "Business Connect Group",
+      "facilitator": "Mr. Robert Taylor"
+    },
+    {
+      "id": 9,
+      "title": "Science Fair",
+	  "startdate": "2023-11-01",
+      "enddate": "2023-11-08",
+      "location": "City Science Museum",
+      "organizer": "Future Scientists Club",
+      "facilitator": "Professor Emily Johnson"
+    },
+    {
+      "id": 10,
+      "title": "Winter Wonderland Gala",
+	  "startdate": "2023-12-10",
+      "enddate": "2023-12-20",
+      "location": "Grand Ballroom",
+      "organizer": "Festive Events Management",
+      "facilitator": "Ms. Sophia Reynolds"
+    }
+  ]
+}
