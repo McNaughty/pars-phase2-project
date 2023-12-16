@@ -17,8 +17,8 @@ function LandingPage(){
       const navigate = useNavigate();
       
     return (
-        <div className="container">
-            <div className="header">
+        <div className="lcontainer">
+            <div className="lheader">
                 <div className="text"> Task Selection </div>
                 <div className="underline"></div>
             </div>
