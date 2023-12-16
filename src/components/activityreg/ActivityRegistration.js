@@ -14,7 +14,7 @@ function ActivityRegistration({eventDets, closeModal}){
     const { eTitle, eStart, eEnd } = state || {};
 
     return (
-        <div className="container">
+        <div className="accontainer">
             <div className="header">
                 <div className="text"> Activity Registration </div>
                 <div className="underline"></div>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./LandingPage.css"
 import {useNavigate} from "react-router-dom";
+// import "../app/App.css";
 
 function LandingPage(){
 
@@ -17,8 +18,8 @@ function LandingPage(){
       const navigate = useNavigate();
       
     return (
-        <div className="container">
-            <div className="header">
+        <div className="landingcontainer">
+            <div className="landingheader">
                 <div className="text"> Task Selection </div>
                 <div className="underline"></div>
             </div>
