@@ -1,75 +1,70 @@
+# Phase2Project-Personnel Activity Report Schedule (P.A.R.S)
+Moringa Software Development Course - Phase two project
 
-# Personnel-Activity-Report-Schedule-P.A.R.S-
-Moringa Phase 2 Group Project
+# Author
+Winnie Abuor
 
-# Getting Started with Create React App
+# Live Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://pars-project-frontend.onrender.com
 
-## Available Scripts
+# P.A.R.S
+P.A.R.S is a web application that is meant for scheduling events and also allowing space for participants to register for the events.
 
-In the project directory, you can run:
+Organizers can have their events listed on the calendar that will be accessible to the public who will then have an option to apply and attend or even deregister from the event.
 
-### `npm start`
+Below is the structure of the application:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Landing Page
+   This is the first page that every site visitor will see. They will then have the option to register an event or view the calendar for scheduled events.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+  <img src="./D.png" width="350" title="hover text">
+<!--   <img src="./.png" width="350" alt="accessibility text"> -->
+</p>
 
-### `npm test`
+2. Event Registration
+   This is the module that organizers will use to schedule their events. Data captured is such as event location, event title, organizer, facilitator and the start and end dates.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <img src="./G.png" width="350" title="hover text">
+<!--   <img src="./GameList.png" width="350" alt="accessibility text"> -->
+</p>
 
-### `npm run build`
+3. Event Dashboard
+   The event dashboard is calendar based whereby users can navigate the different dates to see which events are scheduled. They can then be able to click on an event and see more details about it.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+  <img src="./eventDash.png" width="350" title="event dashboard">
+  <img src="./eventModal.png" width="350" title="event modal">
+<!--   <img src="./UserReg.png" width="350" alt="accessibility text"> -->
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Activity Registration
+   This is where participants will have the opportunity to register for an event.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   <p align="center">
+  <img src="./eventDash.png" width="350" title="event dashboard">
+<!--   <img src="./eventModal.png" width="350" title="event modal"> -->
+<!--   <img src="./UserReg.png" width="350" alt="accessibility text"> -->
+</p>
 
-### `npm run eject`
+# Features
+Display list of released video games available in the database using a json server : https://retoolapi.dev/iN1KN2/games
+Fiilter out specific games based on the genre and the publishers
+Subscribe to the gamers spot network
+Watch a video of all upcoming video games
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Technology used
+HTML
+CSS
+React - JavaScript
+Json database (https://retoolapi.dev/iN1KN2/games && https://retoolapi.dev/qu2Ysx/userdata)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Collaborators
+1. Winnie Abuor
+2. Mohammed Hamis
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Licensing
+There is no license requirement at the moment to user the content provided.
 

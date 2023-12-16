@@ -72,7 +72,7 @@ function Register() {
   };
 
   return (
-    <div className="escontainer">
+    <div className="econtainer">
       <div className="header">
         <h1 className="text">Event Registration</h1>
         <div className="underline"></div>
