@@ -6,13 +6,6 @@ import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 
 function Modal({selectedEvent, closeModal, register}){
 
-  // const [registration, setRegistration] = useState(false)
-
-  // const handleRegistration = () => {
-  //   setRegistration(true);
-  //   // closeModal();
-
-  // };
 
     return <>
     {/* {console.log(selectedEvent)} */}
