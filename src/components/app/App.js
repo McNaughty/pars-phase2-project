@@ -2,7 +2,7 @@ import { Calendar } from "react-big-calendar";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../dashboard/CalendarDash";
-import ActivityRegistration from "../activityreg/ActivityRegistration";
+import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 import Modal from "../modal/Modal";
 // import ErrorPage from "./ErrorPage";
 import LandingPage from "../landing/LandingPage";
@@ -22,8 +22,8 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Home />} />
           <Route
-            path="/ActivityRegistration"
-            element={<ActivityRegistration />}
+            path="/ParticipantRegistration"
+            element={<ParticipantRegistration />}
           />
           <Route path="/eventschedule" element={<Register />} />
           <Route path="/calendar" element={<CalendarDash />} />

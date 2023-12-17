@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import "./Modal.css";
-import ActivityRegistration from "../activityreg/ActivityRegistration";
+import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 
 
 
