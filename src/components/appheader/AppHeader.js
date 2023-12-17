@@ -20,7 +20,7 @@ function AppHeader() {
       <ul className={menuOpen ? "open" : ""}>
         <li>
           {/* //navlink is a react-dom inbuilt tag for highlighting selected tags */}
-          <NavLink to="/about"> About </NavLink>
+          <NavLink to="/"> About </NavLink>
         </li>
 
         <li>

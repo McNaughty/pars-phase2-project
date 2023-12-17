@@ -11,30 +11,30 @@ function Register() {
     endDate: "",
   });
 
-  const [eventsData, setEventsData] = useState([]);
+  const [eventsData, setEventsData] = useState({ events: [] });
 
   const [registeredEvents, setRegisteredEvents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/events")
+    fetch("https://pars-project.onrender.com/db")
       .then((response) => {
         if (!response.ok) {
           throw Error("Failed to fetch events");
         }
-        return response.json();
+        return response.json(); // return the promise
       })
       .then((data) => {
         setEventsData(data);
-
-        if (data.length > 0) {
+  
+        if (data.events.length > 0) {
           setFormData((prevData) => ({
             ...prevData,
-            organizer: data[0].organizer,
-            event: data[0].title,
-            facilitator: data[0].facilitator,
-            location: data[0].location,
-            startDate: data[0].startdate,
-            endDate: data[0].enddate,
+            organizer: data.events[0].organizer,
+            event: data.events[0].title,
+            facilitator: data.events[0].facilitator,
+            location: data.events[0].location,
+            startDate: data.events[0].startdate,
+            endDate: data.events[0].enddate,
           }));
         }
       })
@@ -47,7 +47,9 @@ function Register() {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
 
-    const selectedEvent = eventsData.find((event) => event.title === value);
+    const selectedEvent = eventsData.events.find(
+      (event) => event.title === value
+    );
     setFormData((prevData) => ({
       ...prevData,
       facilitator: selectedEvent.facilitator,
@@ -98,11 +100,12 @@ function Register() {
             value={formData.event}
             onChange={handleChange}
           >
-            {eventsData.map((event) => (
+            { eventsData.events && eventsData.events.map((event) => (
               <option key={event.id} value={event.title}>
                 {`${event.title} `}
-                {/* (${event.startdate} - ${event.enddate})
-                 */}
+                
+           
+
               </option>
             ))}
           </select>
@@ -170,10 +173,10 @@ function Register() {
       <div>
         <h2>All Events</h2>
         <ul>
-          {eventsData.map((event) => (
-            <li key={event.id}>{`${event.title} `}</li>
-            // (${event.startdate} - ${event.enddate})
-          ))}
+          {eventsData.events &&
+            eventsData.events.map((event) => (
+              <li key={event.id}>{`${event.title} `}</li>
+            ))}
         </ul>
       </div>
       {/* registered events */}

@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import Modal from "../modal/Modal";
 import eventsData from "../../Events.json";
-import ActivityRegistration from "../activityreg/ActivityRegistration";
+import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 import {useNavigate} from "react-router-dom";
 
 const locales = {
@@ -107,7 +107,7 @@ function CalendarDash() {
         <Modal selectedEvent={selected} closeModal={closeModal} register={handleRegistration} />
       )}
 
-      {registration ? ( <ActivityRegistration eventDets={selected} closeModal={closeModal} /> ) : (null)}
+      {registration ? ( <ParticipantRegistration eventDets={selected} closeModal={closeModal} /> ) : (null)}
      
     </div>
   );

@@ -20,3 +20,22 @@
     width: 100%;
     margin-top: 30px;
 }
+
+
+.lsub-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+    color:black;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.lpolicy {
+    color: grey;
+    font-size: 16px;
+    font-weight: 500;
+}
