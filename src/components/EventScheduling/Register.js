@@ -25,7 +25,7 @@ function Register() {
       .then((data) => {
         setEventsData(data);
 
-        if (data.events.length > 0) {
+        if (data.length > 0) {
           setFormData((prevData) => ({
             ...prevData,
             organizer: data[0].organizer,
@@ -47,64 +47,64 @@ function Register() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-//   const handleRegister = () => {
-//     fetch("https://pars-project.onrender.com/db", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(formData),
-//     })
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw Error("Failed to register for the event");
-//         }
-//         return response.json();
-//       })
-//       .then(() => {
-//         if (!registeredEvents.includes(formData.event)) {
-//           setRegisteredEvents((prevEvents) => [...prevEvents, formData.event]);
-//         }
-//       })
-//       .catch((error) => {
-//         console.error("Error registering for the event:", error.message);
-//       });
-//   };
+  //   const handleRegister = () => {
+  //     fetch("https://pars-project.onrender.com/db", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     })
+  //       .then((response) => {
+  //         if (!response.ok) {
+  //           throw Error("Failed to register for the event");
+  //         }
+  //         return response.json();
+  //       })
+  //       .then(() => {
+  //         if (!registeredEvents.includes(formData.event)) {
+  //           setRegisteredEvents((prevEvents) => [...prevEvents, formData.event]);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error registering for the event:", error.message);
+  //       });
+  //   };
 
   const handleDeregister = () => {
     console.log(`De-registered from event: ${formData.event}`);
   };
 
-const handleNewEvent = () => {
-  fetch("https://pars-project.onrender.com/events", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw Error("Failed to add a new event");
-      }
-      return response.json();
+  const handleNewEvent = () => {
+    fetch("https://pars-project.onrender.com/events", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     })
-    .then(() => {
-      console.log("New event added successfully");
-      setEventsData((prevEvents) => [...prevEvents, formData]);
-      setFormData({
-        organizer: "",
-        event: "",
-        facilitator: "",
-        location: "",
-        startdate: "",
-        enddate: "",
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Failed to add a new event");
+        }
+        return response.json();
+      })
+      .then(() => {
+        console.log("New event added successfully");
+        setEventsData((prevEvents) => [...prevEvents, formData]);
+        setFormData({
+          organizer: "",
+          event: "",
+          facilitator: "",
+          location: "",
+          startdate: "",
+          enddate: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error adding a new event:", error.message);
       });
-    })
-    .catch((error) => {
-      console.error("Error adding a new event:", error.message);
-    });
-};
+  };
 
   return (
     <div className="econtainer">
@@ -134,10 +134,10 @@ const handleNewEvent = () => {
             onChange={handleChange}
           >
             {eventsData.map((event) => (
-                <option key={event.id} value={event.event}>
-                  {`${event.event} `}
-                </option>
-              ))}
+              <option key={event.id} value={event.event}>
+                {`${event.event} `}
+              </option>
+            ))}
           </select>
         </label>
         {/* facilitator */}
@@ -205,27 +205,15 @@ const handleNewEvent = () => {
       {/* events */}
       <div>
         <h2>All Events</h2>
-        <label>
-          Event:
-          {/* type a new event or select an existing one */}
-          <input
-            type="text"
-            name="event"
-            value={formData.event}
-            onChange={handleChange}
-            list="eventsList"
-          />
-          {/* existing events */}
-          <datalist id="eventsList">
-            {eventsData.map((event) => (
-                <option key={event.id}>{`${event.event} `}</option>
-              ))}
-          </datalist>
-        </label>
+        <ul>
+          {eventsData.map((event) => (
+              <li key={event.id}>{`${event.title} `}</li>
+            ))}
+        </ul>
       </div>
       {/* registered events */}
       <div>
-        <h2>Registered Events</h2>
+        <h2>New Events</h2>
         <ul>
           {registeredEvents.map((event) => (
             <li key={event}>{event}</li>
