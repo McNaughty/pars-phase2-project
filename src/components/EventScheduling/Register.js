@@ -7,8 +7,8 @@ function Register() {
     event: "",
     facilitator: "",
     location: "",
-    startDate: "",
-    endDate: "",
+    startdate: "",
+    enddate: "",
   });
 
   const [eventsData, setEventsData] = useState([]);
@@ -75,35 +75,36 @@ function Register() {
     console.log(`De-registered from event: ${formData.event}`);
   };
 
-  const handleNewEvent = () => {
-    fetch("https://pars-project.onrender.com/db", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
+const handleNewEvent = () => {
+  fetch("https://pars-project.onrender.com/db", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error("Failed to add a new event");
+      }
+      return response.json();
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("Failed to add a new event");
-        }
-        return response.json();
-      })
-      .then(() => {
-        setEventsData((prevEvents) => [...prevEvents, formData]);
-        setFormData({
-          organizer: "",
-          event: "",
-          facilitator: "",
-          location: "",
-          startDate: "",
-          endDate: "",
-        });
-      })
-      .catch((error) => {
-        console.error("Error adding a new event:", error.message);
+    .then(() => {
+      console.log("New event added successfully");
+      setEventsData((prevEvents) => [...prevEvents, formData]);
+      setFormData({
+        organizer: "",
+        event: "",
+        facilitator: "",
+        location: "",
+        startdate: "",
+        enddate: "",
       });
-  };
+    })
+    .catch((error) => {
+      console.error("Error adding a new event:", error.message);
+    });
+};
 
   return (
     <div className="econtainer">
@@ -168,7 +169,7 @@ function Register() {
           <input
             className="input"
             type="date"
-            name="startDate"
+            name="startdate"
             value={formData.startDate}
             onChange={handleChange}
           />
@@ -179,7 +180,7 @@ function Register() {
           <input
             className="input"
             type="date"
-            name="endDate"
+            name="enddate"
             value={formData.endDate}
             onChange={handleChange}
           />
