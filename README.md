@@ -20,7 +20,6 @@ Below is the structure of the application:
 
 <p align="center">
   <img src="./src/assets/Home.png" width="350" title="Landing Page">
-<!--   <img src="./.png" width="350" alt="accessibility text"> -->
 </p>
 
 2. Event Registration
@@ -36,13 +35,12 @@ Below is the structure of the application:
 <p align="center">
   <img src="./src/assets/CalendarPage.png" width="350" title="hover text">
   <img src="./src/assets/CalendarPageDetails.png" width="350" alt="accessibility text">
-<!--   <img src="./UserReg.png" width="350" alt="accessibility text"> -->
 </p>
 
 4. Participant Registration
    This is where participants will have the opportunity to register for an event.
 
-   <p align="center">
+<p align="center">
   <img src="./src/assets/ParticipantRegistration.png" width="350" title="event dashboard">
 </p>
 
