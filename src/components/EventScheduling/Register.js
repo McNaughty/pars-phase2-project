@@ -164,7 +164,8 @@ function Register() {
         <h2>All Events</h2>
         <ul>
           {eventsData.map((event) => (
-              <li key={event.id}>{`${event.title} `}</li>
+            <li key={event.id}>{`${event.title} `}</li>
+
             ))}
         </ul>
       </div>
