@@ -126,11 +126,14 @@ function Register() {
 
         <label>
           Event:
-          <select className="input" name="event" value={formData.event} onChange={handleChange}>
-            // {eventsData.map((event) => (
-            //   <option key={event.id} value={event.title}>
-            //     {`${event.title} `}
+          </select>
 
+            <select
+            className="input"
+            name="event"
+            value={formData.event}
+            onChange={handleChange}
+          >
             { eventsData.events && eventsData.events.map((event) => (
               <option key={event.id} value={event.title}>
                 {`${event.title} `}
