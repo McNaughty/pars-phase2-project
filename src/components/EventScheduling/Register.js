@@ -32,8 +32,8 @@ function Register() {
             event: data.events[0].title,
             facilitator: data.events[0].facilitator,
             location: data.events[0].location,
-            startDate: data.events[0].startdate,
-            endDate: data.events[0].enddate,
+            startdate: data.events[0].startdate,
+            enddate: data.events[0].enddate,
           }));
         }
       })
@@ -166,6 +166,7 @@ function Register() {
         <label>
           Start Date:
           <input
+            className="input"
             type="date"
             name="startDate"
             value={formData.startDate}
