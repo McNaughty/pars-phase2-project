@@ -211,15 +211,6 @@ function Register() {
             ))}
         </ul>
       </div>
-      {/* registered events */}
-      // <div>
-      //   <h2>New Events</h2>
-      //   <ul>
-      //     {registeredEvents.map((event) => (
-      //       <li key={event}>{event}</li>
-      //     ))}
-      //   </ul>
-      // </div>
     </div>
   );
 }
