@@ -19,7 +19,7 @@ Below is the structure of the application:
    This is the first page that every site visitor will see. They will then have the option to register an event or view the calendar for scheduled events.
 
 <p align="center">
-  <img src="./D.png" width="350" title="hover text">
+  <img src="./src/assets/Home.png" width="350" title="Landing Page">
 <!--   <img src="./.png" width="350" alt="accessibility text"> -->
 </p>
 
@@ -27,26 +27,23 @@ Below is the structure of the application:
    This is the module that organizers will use to schedule their events. Data captured is such as event location, event title, organizer, facilitator and the start and end dates.
 
 <p align="center">
-  <img src="./G.png" width="350" title="hover text">
-<!--   <img src="./GameList.png" width="350" alt="accessibility text"> -->
+  <img src="./src/assets/EventRegistration.png" width="350" title="hover text">
 </p>
 
 3. Event Dashboard
    The event dashboard is calendar based whereby users can navigate the different dates to see which events are scheduled. They can then be able to click on an event and see more details about it.
 
 <p align="center">
-  <img src="./eventDash.png" width="350" title="event dashboard">
-  <img src="./eventModal.png" width="350" title="event modal">
+  <img src="./src/assets/CalendarPage.png" width="350" title="hover text">
+  <img src="./src/assets/CalendarPageDetails.png" width="350" alt="accessibility text">
 <!--   <img src="./UserReg.png" width="350" alt="accessibility text"> -->
 </p>
 
-4. Activity Registration
+4. Participant Registration
    This is where participants will have the opportunity to register for an event.
 
    <p align="center">
-  <img src="./eventDash.png" width="350" title="event dashboard">
-<!--   <img src="./eventModal.png" width="350" title="event modal"> -->
-<!--   <img src="./UserReg.png" width="350" alt="accessibility text"> -->
+  <img src="./src/assets/ParticipantRegistration.png" width="350" title="event dashboard">
 </p>
 
 # Features
@@ -64,6 +61,7 @@ Json database (https://retoolapi.dev/iN1KN2/games && https://retoolapi.dev/qu2Ys
 # Collaborators
 1. Winnie Abuor
 2. Mohammed Hamis
+3. Wasaa Abdalla
 
 # Licensing
 There is no license requirement at the moment to user the content provided.
