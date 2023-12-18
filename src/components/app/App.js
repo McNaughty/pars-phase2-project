@@ -8,10 +8,13 @@ import Modal from "../modal/Modal";
 import LandingPage from "../landing/LandingPage";
 import AppHeader from "../appheader/AppHeader";
 import "../appheader/AppHeader.css";
+import Register from "../Register";
 
 function App() {
+  <Register />
   return (
     // <React.StrictMode>
+    
       <Router>
         <nav>
           <AppHeader />
@@ -27,6 +30,7 @@ function App() {
         </Routes>
       </Router>
     // </React.StrictMode>
+    
   );
 }
 

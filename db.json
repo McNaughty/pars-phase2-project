@@ -89,7 +89,42 @@
       "location": "Grand Ballroom",
       "organizer": "Festive Events Management",
       "facilitator": "Ms. Sophia Reynolds"
+    },
+    {
+      "organizer": "TechConnect",
+      "event": "all ",
+      "facilitator": "Dr. Allison Williams",
+      "location": "Tech Hub Exhibition Center",
+      "startDate": "2023-03-20",
+      "endDate": "2023-03-20",
+      "id": 11
+    },
+    {
+      "organizer": "TechConnect",
+      "event": "",
+      "facilitator": "Dr. Allison Williams",
+      "location": "Tech Hub Exhibition Center",
+      "startDate": "2023-03-20",
+      "endDate": "2023-03-20",
+      "id": 12
+    },
+    {
+      "organizer": "TechConnect",
+      "event": "Tech Summit 2023",
+      "facilitator": "Dr. Allison Williams",
+      "location": "Tech Hub Exhibition Center",
+      "startDate": "2023-03-20",
+      "endDate": "2023-03-20",
+      "id": 13
+    },
+    {
+      "organizer": "TechConnect",
+      "event": "all",
+      "facilitator": "Dr. Allison Williams",
+      "location": "Tech Hub Exhibition Center",
+      "startDate": "2023-03-20",
+      "endDate": "2023-03-20",
+      "id": 14
     }
-   
   ]
 }
