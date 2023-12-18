@@ -4,7 +4,7 @@ import "./Register.css";
 function Register() {
   const [formData, setFormData] = useState({
     organizer: "",
-    event: "",
+    title: "",
     facilitator: "",
     location: "",
     startdate: "",
@@ -59,7 +59,7 @@ function Register() {
         setEventsData((prevEvents) => [...prevEvents, formData]);
         setFormData({
           organizer: "",
-          event: "",
+          title: "",
           facilitator: "",
           location: "",
           startdate: "",
@@ -95,8 +95,8 @@ function Register() {
            <input
             className="input"
             type="text"
-            name="event"
-            value={formData.event}
+            name="title"
+            value={formData.title}
             onChange={handleChange}
           />
         </label>
@@ -164,7 +164,8 @@ function Register() {
         <h2>All Events</h2>
         <ul>
           {eventsData.map((event) => (
-              <li key={event.id}>{`${event.event} `}</li>
+            <li key={event.id}>{`${event.title} `}</li>
+
             ))}
         </ul>
       </div>
