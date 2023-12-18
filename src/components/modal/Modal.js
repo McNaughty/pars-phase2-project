@@ -1,18 +1,11 @@
 import React,{useState} from "react";
 import "./Modal.css";
-import ActivityRegistration from "../activityreg/ActivityRegistration";
+import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 
 
 
 function Modal({selectedEvent, closeModal, register}){
 
-  // const [registration, setRegistration] = useState(false)
-
-  // const handleRegistration = () => {
-  //   setRegistration(true);
-  //   // closeModal();
-
-  // };
 
     return <>
     {/* {console.log(selectedEvent)} */}

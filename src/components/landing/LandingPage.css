@@ -12,22 +12,30 @@
     margin-top: 70px;
 }
 
-<<<<<<< HEAD
-
-.landingheader{
-=======
 .lheader{
->>>>>>> 346f98d22cfe9136a161c9785afddb192476b202
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 9px;
-<<<<<<< HEAD
-    width: 100%;;
-    margin-top: 30px;
-}
-=======
     width: 100%;
     margin-top: 30px;
 }
->>>>>>> 346f98d22cfe9136a161c9785afddb192476b202
+
+
+.lsub-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+    color:black;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.lpolicy {
+    color: grey;
+    font-size: 16px;
+    font-weight: 500;
+}

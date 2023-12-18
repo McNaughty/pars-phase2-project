@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import Modal from "../modal/Modal";
 import eventsData from "../../Events.json";
-import ActivityRegistration from "../activityreg/ActivityRegistration";
+import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 import {useNavigate} from "react-router-dom";
 
 const locales = {
@@ -33,8 +33,7 @@ function CalendarDash() {
 
   // captures the open / close state of the modal
   const [isOpen, setIsOpen] = useState(false);
-  // const [showCalender, setShowCalender] = useState(true);
-
+  
   const navigate = useNavigate();
 
   const handleSelected = (event) => {
@@ -52,20 +51,12 @@ function CalendarDash() {
     setIsOpen(false);
   };
 
-  // const registrationRoute = (event) => {
-  //   const eTitle = event.title;
-  //   // navigate("/activityregistration", {state: {title:selected.title}});
-
-  //   console.log(eTitle);
-  //   console.log(selected)
-  // };
 
   function regRoute(){
     const eTitle = selected.title;
     const eStart = selected.startdate;
     const eEnd = selected.enddate;
-    // navigate("/activityregistration"{ state: { eTitle, eStart, eEnd }});
-    navigate("/activityregistration", { state: { eTitle, eStart, eEnd } });
+    navigate("/participantregistration", { state: { eTitle, eStart, eEnd } });
 
     // console.log(selected);
     // console.log(eTitle)
@@ -107,7 +98,7 @@ function CalendarDash() {
         <Modal selectedEvent={selected} closeModal={closeModal} register={handleRegistration} />
       )}
 
-      {registration ? ( <ActivityRegistration eventDets={selected} closeModal={closeModal} /> ) : (null)}
+      {registration ? ( <ParticipantRegistration eventDets={selected} closeModal={closeModal} /> ) : (null)}
      
     </div>
   );

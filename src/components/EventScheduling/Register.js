@@ -7,16 +7,15 @@ function Register() {
     event: "",
     facilitator: "",
     location: "",
-    startDate: "",
-    endDate: "",
+    startdate: "",
+    enddate: "",
   });
 
   const [eventsData, setEventsData] = useState([]);
-
   const [registeredEvents, setRegisteredEvents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/events")
+    fetch("https://pars-project.onrender.com/events")
       .then((response) => {
         if (!response.ok) {
           throw Error("Failed to fetch events");
@@ -25,18 +24,6 @@ function Register() {
       })
       .then((data) => {
         setEventsData(data);
-
-        if (data.length > 0) {
-          setFormData((prevData) => ({
-            ...prevData,
-            organizer: data[0].organizer,
-            event: data[0].title,
-            facilitator: data[0].facilitator,
-            location: data[0].location,
-            startDate: data[0].startdate,
-            endDate: data[0].enddate,
-          }));
-        }
       })
       .catch((error) => {
         console.error("Error fetching events:", error.message);
@@ -46,29 +33,42 @@ function Register() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
-
-    const selectedEvent = eventsData.find((event) => event.title === value);
-    setFormData((prevData) => ({
-      ...prevData,
-      facilitator: selectedEvent.facilitator,
-      location: selectedEvent.location,
-      startDate: selectedEvent.startdate,
-      endDate: selectedEvent.enddate,
-    }));
   };
 
-  // registration
-  const handleRegister = () => {
-    if (!registeredEvents.includes(formData.event)) {
-      setRegisteredEvents((prevEvents) => [...prevEvents, formData.event]);
-    }
-  };
 
-  //  de-registration
   const handleDeregister = () => {
-    setRegisteredEvents((prevEvents) =>
-      prevEvents.filter((event) => event !== formData.event)
-    );
+    console.log(`De-registered from event: ${formData.event}`);
+  };
+
+  const handleNewEvent = () => {
+    fetch("https://pars-project.onrender.com/events", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Failed to add a new event");
+        }
+        return response.json();
+      })
+      .then(() => {
+        console.log("New event added successfully");
+        setEventsData((prevEvents) => [...prevEvents, formData]);
+        setFormData({
+          organizer: "",
+          event: "",
+          facilitator: "",
+          location: "",
+          startdate: "",
+          enddate: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Error adding a new event:", error.message);
+      });
   };
 
   return (
@@ -86,28 +86,21 @@ function Register() {
             type="text"
             name="organizer"
             value={formData.organizer}
-            readOnly
+            onChange={handleChange}
           />
         </label>
 
         <label>
-          Event:
-          <select
+          Event Title:
+           <input
             className="input"
+            type="text"
             name="event"
             value={formData.event}
             onChange={handleChange}
-          >
-            {eventsData.map((event) => (
-              <option key={event.id} value={event.title}>
-                {`${event.title} `}
-                {/* (${event.startdate} - ${event.enddate})
-                 */}
-              </option>
-            ))}
-          </select>
+          />
         </label>
-        {/* facilitator  */}
+        {/* facilitator */}
         <label>
           Facilitator:
           <input
@@ -115,7 +108,7 @@ function Register() {
             type="text"
             name="facilitator"
             value={formData.facilitator}
-            readOnly
+            onChange={handleChange}
           />
         </label>
         {/* location */}
@@ -126,18 +119,18 @@ function Register() {
             type="text"
             name="location"
             value={formData.location}
-            readOnly
+            onChange={handleChange}
           />
         </label>
-        {/*start date */}
+        {/* start date */}
         <label>
           Start Date:
           <input
             className="input"
             type="date"
-            name="startDate"
-            value={formData.startDate}
-            readOnly
+            name="startdate"
+            value={formData.startdate}
+            onChange={handleChange}
           />
         </label>
         {/* end date */}
@@ -146,23 +139,23 @@ function Register() {
           <input
             className="input"
             type="date"
-            name="endDate"
-            value={formData.endDate}
-            readOnly
+            name="enddate"
+            value={formData.enddate}
+            onChange={handleChange}
           />
         </label>
-        {/* Buttons for registering and de-registering */}
+        {/* Buttons for registering, de-registering, adding new event, and deleting event */}
         <div className="submit-container">
-          <button className="submit" type="button" onClick={handleRegister}>
-            Register
-          </button>
           <button
             className="submit"
             id="cancelBtn"
             type="button"
             onClick={handleDeregister}
           >
-            Cancel event
+            De-register
+          </button>
+          <button className="submit" type="button" onClick={handleNewEvent}>
+            Add New Event
           </button>
         </div>
       </form>
@@ -171,18 +164,8 @@ function Register() {
         <h2>All Events</h2>
         <ul>
           {eventsData.map((event) => (
-            <li key={event.id}>{`${event.title} `}</li>
-            // (${event.startdate} - ${event.enddate})
-          ))}
-        </ul>
-      </div>
-      {/* registered events */}
-      <div>
-        <h2>Registered Events</h2>
-        <ul>
-          {registeredEvents.map((event) => (
-            <li key={event}>{event}</li>
-          ))}
+              <li key={event.id}>{`${event.event} `}</li>
+            ))}
         </ul>
       </div>
     </div>
