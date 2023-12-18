@@ -126,19 +126,14 @@ function Register() {
         </label>
 
         <label>
-          Event:
-          <select
+          Event Title:
+           <input
             className="input"
+            type="text"
             name="event"
             value={formData.event}
             onChange={handleChange}
-          >
-            {eventsData.map((event) => (
-              <option key={event.id} value={event.event}>
-                {`${event.event} `}
-              </option>
-            ))}
-          </select>
+          />
         </label>
         {/* facilitator */}
         <label>
