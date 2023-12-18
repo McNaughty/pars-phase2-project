@@ -8,7 +8,7 @@ Winnie Abuor
 
 https://pars-project-frontend.onrender.com
 
-# P.A.R.S
+# P.A.R.S Features
 P.A.R.S is a web application that is meant for scheduling events and also allowing space for participants to register for the events.
 
 Organizers can have their events listed on the calendar that will be accessible to the public who will then have an option to apply and attend or even deregister from the event.
@@ -46,17 +46,11 @@ Below is the structure of the application:
   <img src="./src/assets/ParticipantRegistration.png" width="350" title="event dashboard">
 </p>
 
-# Features
-Display list of released video games available in the database using a json server : https://retoolapi.dev/iN1KN2/games
-Fiilter out specific games based on the genre and the publishers
-Subscribe to the gamers spot network
-Watch a video of all upcoming video games
-
 # Technology used
 HTML
 CSS
 React - JavaScript
-Json database (https://retoolapi.dev/iN1KN2/games && https://retoolapi.dev/qu2Ysx/userdata)
+Json database (https://pars-project.onrender.com/events)
 
 # Collaborators
 1. Winnie Abuor
