@@ -25,15 +25,15 @@ function Register() {
       .then((data) => {
         setEventsData(data);
 
-        if (data.length > 0) {
+        if (data.events.length > 0) {
           setFormData((prevData) => ({
             ...prevData,
-            organizer: data[0].organizer,
-            event: data[0].title,
-            facilitator: data[0].facilitator,
-            location: data[0].location,
-            startDate: data[0].startdate,
-            endDate: data[0].enddate,
+            organizer: data.events[0].organizer,
+            event: data.events[0].title,
+            facilitator: data.events[0].facilitator,
+            location: data.events[0].location,
+            startDate: data.events[0].startdate,
+            endDate: data.events[0].enddate,
           }));
         }
       })
@@ -76,7 +76,7 @@ function Register() {
   };
 
   const handleNewEvent = () => {
-    fetch("http://localhost:3000/events", {
+    fetch("https://pars-project.onrender.com/db", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -127,9 +127,14 @@ function Register() {
         <label>
           Event:
           <select className="input" name="event" value={formData.event} onChange={handleChange}>
-            {eventsData.map((event) => (
+            // {eventsData.map((event) => (
+            //   <option key={event.id} value={event.title}>
+            //     {`${event.title} `}
+
+            { eventsData.events && eventsData.events.map((event) => (
               <option key={event.id} value={event.title}>
                 {`${event.title} `}
+
               </option>
             ))}
           </select>
@@ -208,9 +213,14 @@ function Register() {
   />
   {/* existing events */}
   <datalist id="eventsList">
-    {eventsData.map((event) => (
-      <option key={event.id} value={event.title} />
-    ))}
+    // {eventsData.map((event) => (
+    //   <option key={event.id} value={event.title} />
+    // ))}
+
+    {eventsData.events &&
+            eventsData.events.map((event) => (
+              <option key={event.id}>{`${event.title} `} />
+            ))}
   </datalist>
 </label>
       </div>
