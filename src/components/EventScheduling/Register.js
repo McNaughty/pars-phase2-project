@@ -29,7 +29,7 @@ function Register() {
           setFormData((prevData) => ({
             ...prevData,
             organizer: data.events[0].organizer,
-            event: data.events[0].title,
+            event: data.events[0].event,
             facilitator: data.events[0].facilitator,
             location: data.events[0].location,
             startdate: data.events[0].startdate,
@@ -76,7 +76,7 @@ function Register() {
   };
 
 const handleNewEvent = () => {
-  fetch("https://pars-project.onrender.com/db", {
+  fetch("https://pars-project.onrender.com/events", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
