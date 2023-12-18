@@ -126,9 +126,7 @@ function Register() {
 
         <label>
           Event:
-          </select>
-
-            <select
+          <select
             className="input"
             name="event"
             value={formData.event}
