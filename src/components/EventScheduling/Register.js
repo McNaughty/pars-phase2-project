@@ -24,18 +24,6 @@ function Register() {
       })
       .then((data) => {
         setEventsData(data);
-
-        if (data.length > 0) {
-          setFormData((prevData) => ({
-            ...prevData,
-            organizer: data[0].organizer,
-            event: data[0].event,
-            facilitator: data[0].facilitator,
-            location: data[0].location,
-            startdate: data[0].startdate,
-            enddate: data[0].enddate,
-          }));
-        }
       })
       .catch((error) => {
         console.error("Error fetching events:", error.message);
@@ -47,29 +35,6 @@ function Register() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  //   const handleRegister = () => {
-  //     fetch("https://pars-project.onrender.com/db", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(formData),
-  //     })
-  //       .then((response) => {
-  //         if (!response.ok) {
-  //           throw Error("Failed to register for the event");
-  //         }
-  //         return response.json();
-  //       })
-  //       .then(() => {
-  //         if (!registeredEvents.includes(formData.event)) {
-  //           setRegisteredEvents((prevEvents) => [...prevEvents, formData.event]);
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error registering for the event:", error.message);
-  //       });
-  //   };
 
   const handleDeregister = () => {
     console.log(`De-registered from event: ${formData.event}`);
@@ -181,9 +146,6 @@ function Register() {
         </label>
         {/* Buttons for registering, de-registering, adding new event, and deleting event */}
         <div className="submit-container">
-          {/* <button className="submit" type="button" onClick={handleRegister}>
-            Register
-          </button> */}
           <button
             className="submit"
             id="cancelBtn"
