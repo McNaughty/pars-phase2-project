@@ -11,6 +11,7 @@ import Modal from "../modal/Modal";
 import eventsData from "../../Events.json";
 import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 import {useNavigate} from "react-router-dom";
+import "./CalendarDash.css"
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -76,7 +77,8 @@ function CalendarDash() {
  
 
   return (
-    <div className="App">
+    // className="App"
+    <div className="dashboard">
       <div className="header">
                 <div className="text"> Events Calendar </div>
                 <div className="underline"></div>
