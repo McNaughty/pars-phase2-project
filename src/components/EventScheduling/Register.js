@@ -207,19 +207,19 @@ function Register() {
         <h2>All Events</h2>
         <ul>
           {eventsData.map((event) => (
-              <li key={event.id}>{`${event.title} `}</li>
+              <li key={event.id}>{`${event.event} `}</li>
             ))}
         </ul>
       </div>
       {/* registered events */}
-      <div>
-        <h2>New Events</h2>
-        <ul>
-          {registeredEvents.map((event) => (
-            <li key={event}>{event}</li>
-          ))}
-        </ul>
-      </div>
+      // <div>
+      //   <h2>New Events</h2>
+      //   <ul>
+      //     {registeredEvents.map((event) => (
+      //       <li key={event}>{event}</li>
+      //     ))}
+      //   </ul>
+      // </div>
     </div>
   );
 }
