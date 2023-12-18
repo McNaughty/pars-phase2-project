@@ -135,8 +135,8 @@ const handleNewEvent = () => {
           >
             {eventsData.events &&
               eventsData.events.map((event) => (
-                <option key={event.id} value={event.title}>
-                  {`${event.title} `}
+                <option key={event.id} value={event.event}>
+                  {`${event.event} `}
                 </option>
               ))}
           </select>
@@ -220,7 +220,7 @@ const handleNewEvent = () => {
           <datalist id="eventsList">
             {eventsData.events &&
               eventsData.events.map((event) => (
-                <option key={event.id}>{`${event.title} `}</option>
+                <option key={event.id}>{`${event.event} `}</option>
               ))}
           </datalist>
         </label>
