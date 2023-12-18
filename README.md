@@ -64,5 +64,5 @@ Json database (https://retoolapi.dev/iN1KN2/games && https://retoolapi.dev/qu2Ys
 3. Wasaa Abdalla
 
 # Licensing
-There is no license requirement at the moment to user the content provided.
+The MIT License (MIT) 2023 - P.A.R.S. <a href="./License.md" >License.md</a> for more details.
 
