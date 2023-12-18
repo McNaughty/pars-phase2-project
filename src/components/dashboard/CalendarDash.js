@@ -8,9 +8,10 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import Modal from "../modal/Modal";
-import eventsData from "../../Events.json";
+// import eventsData from "../../Events.json";
 import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 import {useNavigate} from "react-router-dom";
+import {useEffect} from "react";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -27,7 +28,25 @@ const localizer = dateFnsLocalizer({
 
 function CalendarDash() {
   // Extract the events data array from the imported JSON data
-  const { events } = eventsData;
+  // const { events } = eventsData;
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch("https://pars-project.onrender.com/events")
+      .then((response) => {
+        if (!response.ok) {
+          throw Error("Failed to fetch events");
+        }
+        return response.json();
+      })
+      .then((events) => {
+        setEvents(events);
+
+      })
+      .catch((error) => {
+        console.error("Error fetching events:", error.message);
+      });
+  }, []);
 
   const [selected, setSelected] = useState(null);
 
@@ -53,7 +72,7 @@ function CalendarDash() {
 
 
   function regRoute(){
-    const eTitle = selected.title;
+    const eTitle = selected.event;
     const eStart = selected.startdate;
     const eEnd = selected.enddate;
     navigate("/participantregistration", { state: { eTitle, eStart, eEnd } });
