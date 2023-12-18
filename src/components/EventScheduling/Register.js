@@ -134,6 +134,8 @@ function Register() {
             { eventsData.events && eventsData.events.map((event) => (
               <option key={event.id} value={event.title}>
                 {`${event.title} `}
+                
+           
 
               </option>
             ))}
