@@ -12,6 +12,7 @@ import Modal from "../modal/Modal";
 import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";
+import "./CalendarDash.css";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -72,7 +73,7 @@ function CalendarDash() {
 
 
   function regRoute(){
-    const eTitle = selected.event;
+    const eTitle = selected.title;
     const eStart = selected.startdate;
     const eEnd = selected.enddate;
     navigate("/participantregistration", { state: { eTitle, eStart, eEnd } });
@@ -95,7 +96,7 @@ function CalendarDash() {
  
 
   return (
-    <div className="App">
+    <div className="dashboard">
       <div className="header">
                 <div className="text"> Events Calendar </div>
                 <div className="underline"></div>

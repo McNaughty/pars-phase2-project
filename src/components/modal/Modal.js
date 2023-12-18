@@ -15,7 +15,7 @@ function Modal({selectedEvent, closeModal, register}){
         <button onClick={closeModal}> X </button>
         </div>
         <div className="title">
-          <h1>{selectedEvent.event}</h1>
+          <h1>{selectedEvent.title}</h1>
           </div>
           <div className="body">
             <p> Event Start Date : {selectedEvent.startdate} </p>
