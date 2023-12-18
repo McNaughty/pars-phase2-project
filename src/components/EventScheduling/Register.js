@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Register.css";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -14,7 +15,7 @@ function Register() {
   const [registeredEvents, setRegisteredEvents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/events")
+    fetch("https://pars-project.onrender.com/db")
       .then((response) => {
         if (!response.ok) {
           throw Error("Failed to fetch events");
@@ -47,7 +48,7 @@ function Register() {
   };
 
   const handleRegister = () => {
-    fetch("http://localhost:3000/events", {
+    fetch("https://pars-project.onrender.com/db", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,13 +106,17 @@ function Register() {
   };
 
   return (
-    <div className="register">
-      <h1>Event Registration</h1>
+    <div className="econtainer">
+       <div className="header">
+        <h1 className="text">Event Registration</h1>
+        <div className="underline"></div>
+      </div>
       <form>
         {/* organizer */}
         <label>
           Organizer:
           <input
+            className="input"
             type="text"
             name="organizer"
             value={formData.organizer}
@@ -121,7 +126,7 @@ function Register() {
 
         <label>
           Event:
-          <select name="event" value={formData.event} onChange={handleChange}>
+          <select className="input" name="event" value={formData.event} onChange={handleChange}>
             {eventsData.map((event) => (
               <option key={event.id} value={event.title}>
                 {`${event.title} `}
@@ -133,6 +138,7 @@ function Register() {
         <label>
           Facilitator:
           <input
+            className="input"
             type="text"
             name="facilitator"
             value={formData.facilitator}
@@ -143,6 +149,7 @@ function Register() {
         <label>
           Location:
           <input
+            className="input"
             type="text"
             name="location"
             value={formData.location}
@@ -163,6 +170,7 @@ function Register() {
         <label>
           End Date:
           <input
+            className="input"
             type="date"
             name="endDate"
             value={formData.endDate}
@@ -170,14 +178,17 @@ function Register() {
           />
         </label>
         {/* Buttons for registering, de-registering, adding new event, and deleting event */}
-        <div>
-          <button type="button" onClick={handleRegister}>
+        <div className="submit-container">
+          <button className="submit"  type="button" onClick={handleRegister}>
             Register
           </button>
-          <button type="button" onClick={handleDeregister}>
+          <button 
+            className="submit"
+            id="cancelBtn"
+            type="button" onClick={handleDeregister}>
             De-register
           </button>
-          <button type="button" onClick={handleNewEvent}>
+          <button className="submit" type="button" onClick={handleNewEvent}>
             Add New Event
           </button>
         </div>
