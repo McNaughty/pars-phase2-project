@@ -15,7 +15,7 @@ function Register() {
   const [registeredEvents, setRegisteredEvents] = useState([]);
 
   useEffect(() => {
-    fetch("https://pars-project.onrender.com/db")
+    fetch("https://pars-project.onrender.com/events")
       .then((response) => {
         if (!response.ok) {
           throw Error("Failed to fetch events");
@@ -28,12 +28,12 @@ function Register() {
         if (data.events.length > 0) {
           setFormData((prevData) => ({
             ...prevData,
-            organizer: data.events[0].organizer,
-            event: data.events[0].event,
-            facilitator: data.events[0].facilitator,
-            location: data.events[0].location,
-            startdate: data.events[0].startdate,
-            enddate: data.events[0].enddate,
+            organizer: data[0].organizer,
+            event: data[0].event,
+            facilitator: data[0].facilitator,
+            location: data[0].location,
+            startdate: data[0].startdate,
+            enddate: data[0].enddate,
           }));
         }
       })
@@ -47,29 +47,29 @@ function Register() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleRegister = () => {
-    fetch("https://pars-project.onrender.com/db", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw Error("Failed to register for the event");
-        }
-        return response.json();
-      })
-      .then(() => {
-        if (!registeredEvents.includes(formData.event)) {
-          setRegisteredEvents((prevEvents) => [...prevEvents, formData.event]);
-        }
-      })
-      .catch((error) => {
-        console.error("Error registering for the event:", error.message);
-      });
-  };
+//   const handleRegister = () => {
+//     fetch("https://pars-project.onrender.com/db", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(formData),
+//     })
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw Error("Failed to register for the event");
+//         }
+//         return response.json();
+//       })
+//       .then(() => {
+//         if (!registeredEvents.includes(formData.event)) {
+//           setRegisteredEvents((prevEvents) => [...prevEvents, formData.event]);
+//         }
+//       })
+//       .catch((error) => {
+//         console.error("Error registering for the event:", error.message);
+//       });
+//   };
 
   const handleDeregister = () => {
     console.log(`De-registered from event: ${formData.event}`);
@@ -133,8 +133,7 @@ const handleNewEvent = () => {
             value={formData.event}
             onChange={handleChange}
           >
-            {eventsData.events &&
-              eventsData.events.map((event) => (
+            {eventsData.map((event) => (
                 <option key={event.id} value={event.event}>
                   {`${event.event} `}
                 </option>
@@ -170,7 +169,7 @@ const handleNewEvent = () => {
             className="input"
             type="date"
             name="startdate"
-            value={formData.startDate}
+            value={formData.startdate}
             onChange={handleChange}
           />
         </label>
@@ -181,15 +180,15 @@ const handleNewEvent = () => {
             className="input"
             type="date"
             name="enddate"
-            value={formData.endDate}
+            value={formData.enddate}
             onChange={handleChange}
           />
         </label>
         {/* Buttons for registering, de-registering, adding new event, and deleting event */}
         <div className="submit-container">
-          <button className="submit" type="button" onClick={handleRegister}>
+          {/* <button className="submit" type="button" onClick={handleRegister}>
             Register
-          </button>
+          </button> */}
           <button
             className="submit"
             id="cancelBtn"
@@ -218,8 +217,7 @@ const handleNewEvent = () => {
           />
           {/* existing events */}
           <datalist id="eventsList">
-            {eventsData.events &&
-              eventsData.events.map((event) => (
+            {eventsData.map((event) => (
                 <option key={event.id}>{`${event.event} `}</option>
               ))}
           </datalist>
