@@ -107,7 +107,7 @@ function Register() {
 
   return (
     <div className="econtainer">
-       <div className="header">
+      <div className="header">
         <h1 className="text">Event Registration</h1>
         <div className="underline"></div>
       </div>
@@ -132,14 +132,12 @@ function Register() {
             value={formData.event}
             onChange={handleChange}
           >
-            { eventsData.events && eventsData.events.map((event) => (
-              <option key={event.id} value={event.title}>
-                {`${event.title} `}
-                
-           
-
-              </option>
-            ))}
+            {eventsData.events &&
+              eventsData.events.map((event) => (
+                <option key={event.id} value={event.title}>
+                  {`${event.title} `}
+                </option>
+              ))}
           </select>
         </label>
         {/* facilitator */}
@@ -187,13 +185,15 @@ function Register() {
         </label>
         {/* Buttons for registering, de-registering, adding new event, and deleting event */}
         <div className="submit-container">
-          <button className="submit"  type="button" onClick={handleRegister}>
+          <button className="submit" type="button" onClick={handleRegister}>
             Register
           </button>
-          <button 
+          <button
             className="submit"
             id="cancelBtn"
-            type="button" onClick={handleDeregister}>
+            type="button"
+            onClick={handleDeregister}
+          >
             De-register
           </button>
           <button className="submit" type="button" onClick={handleNewEvent}>
@@ -205,27 +205,23 @@ function Register() {
       <div>
         <h2>All Events</h2>
         <label>
-  Event:
-  {/* type a new event or select an existing one */}
-  <input
-    type="text"
-    name="event"
-    value={formData.event}
-    onChange={handleChange}
-    list="eventsList"
-  />
-  {/* existing events */}
-  <datalist id="eventsList">
-    // {eventsData.map((event) => (
-    //   <option key={event.id} value={event.title} />
-    // ))}
-
-    {eventsData.events &&
-            eventsData.events.map((event) => (
-              <option key={event.id}>{`${event.title} `} />
-            ))}
-  </datalist>
-</label>
+          Event:
+          {/* type a new event or select an existing one */}
+          <input
+            type="text"
+            name="event"
+            value={formData.event}
+            onChange={handleChange}
+            list="eventsList"
+          />
+          {/* existing events */}
+          <datalist id="eventsList">
+            {eventsData.events &&
+              eventsData.events.map((event) => (
+                <option key={event.id}>{`${event.title} `}</option>
+              ))}
+          </datalist>
+        </label>
       </div>
       {/* registered events */}
       <div>
