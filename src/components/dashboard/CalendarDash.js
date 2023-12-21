@@ -12,6 +12,7 @@ import Modal from "../modal/Modal";
 import ParticipantRegistration from "../participantreg/ParticipantRegistration";
 import {useNavigate} from "react-router-dom";
 import "./CalendarDash.css"
+import { useEffect } from "react";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
