@@ -3,7 +3,7 @@ import "./ParticipantRegistration.css";
 import { useLocation } from "react-router-dom";
 
 import calendar from "../../assets/calendar.svg";
-import location from "../../assets/location.svg";
+// import location from "../../assets/location.svg";
 
 import SuccessModal from "./SuccessModal";
 

@@ -73,3 +73,30 @@
     background-color: crimson;
 }
 
+
+@media (max-width:780px) {
+    .modalBackground {
+        z-index: 1000; /*For giving modal higher preference in terms of display ontop */
+        width: 100%;
+        height: 90vh;
+        background-color: rgba(200, 200, 200);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+    }
+    
+    .modalContainer {
+        width: 90%;
+        height: 50vh;
+        border-radius: 12px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) opx 5px 15px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-left: 15px; 
+        margin-top: 0;
+    }
+}

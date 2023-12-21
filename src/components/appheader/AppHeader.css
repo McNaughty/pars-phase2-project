@@ -1,20 +1,19 @@
-.active{
+.active {
     background-color: #1d4ed8;
 }
 
 nav {
-    /* z-index: auto; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #0f172a;
-    /* background-color: white; */
+    color: white; 
     /* make navbar sticky at the top */
     position: sticky;
     top: 0;
 }
 
-nav .title{
+nav .htitle {
     font-size: 1.5rem;
     margin: 1rem;
     font-weight: bold;
@@ -22,15 +21,12 @@ nav .title{
     color: white;
 }
 
-nav ul{
+nav ul {
     display: flex;
-    /* flex-direction: column;  */
-    width: 100%;
-    padding: 0; /* Remove default padding */
+    
 }
 
-
-nav ul li{
+nav ul li {
     list-style: none;
 }
 
@@ -39,58 +35,63 @@ nav ul li a {
     text-decoration: none;
     color: white;
     padding: 0.5rem;
-    margin: 0.5rem;
-    border-radius: 0.5rem;  
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
 }
 
 /* hover higlight only for non-active elements */
-nav ul li a:not(.active):hover{
+nav ul li a:not(.active):hover {
     background-color: #172554;
 }
 
-/* display style for menu with class open */
-nav ul.open{
-    display:flex;
-}
 
-nav .menu {
+nav .hmenu {
     display: none;
     position: absolute;
-    top: 0.5rem;
+    top: 0.75rem;
     right: 0.5rem;
     flex-direction: column;
     justify-content: space-between;
     width: 2.25rem;
     height: 2rem;
-  }
-  
-  nav .menu .span {
+}
+
+nav .hmenu span {
     height: 0.4rem;
     width: 100%;
     background-color: white;
     border-radius: 0.2rem;
   }
 
-@media (max-width: 768px) {
+@media (max-width:480px) {
+    nav .hmenu {
+        display: flex;
+    }
+
     nav {
-      flex-direction: column;
-      align-items: start;
+        flex-direction: column;
+        align-items: start;
     }
-  
+
     nav ul {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      margin: 0; /* Remove margin for smaller screens */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
     }
-  
+
+    /* display style for menu with class open */
     nav ul.open {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        display: flex;
     }
-  
-    nav .menu {
-      display: flex;
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
     }
-  }
+
+    nav ul li a {
+        margin: 0.2rem 0.5rem;
+    }
+    
+}

@@ -188,42 +188,113 @@ input[type="radio"] {
 
 .input-group {
     display: flex;
-    gap: 20px; /* Adjust the gap between grouped inputs */
-  }
-  
-  .input-group .input {
-    flex: 1; /* Make each input in the group take equal width */
-  }
-  
-  .input-group img {
-    margin: 0; /* Adjust the margin if necessary */
-  }
-  
-  .input-group input {
-    width: 100%; /* Make the input fields fill the available space */
-  }
+    gap: 20px;
+    /* Adjust the gap between grouped inputs */
+}
 
-  .input-group label {
+.input-group .input {
+    flex: 1;  /* Make each input in the group take equal width */
+}
+   
+
+.input-group img {
+    margin: 0;
+    /* Adjust the margin if necessary */
+}
+
+.input-group input {
+    width: 100%;
+    /* Make the input fields fill the available space */
+}
+
+.input-group label {
     display: block;
     text-align: left;
     font-weight: bold;
     margin-bottom: 10px;
-    margin-left: 0; /* Adjust the margin if necessary */
-  }
-  
-  .input-group .radioBtns {
+    margin-left: 0;
+    /* Adjust the margin if necessary */
+}
+
+.input-group .radioBtns {
     display: flex;
-    flex-direction: column; /* Align radio buttons vertically */
-    gap: 10px; /* Adjust the gap between radio buttons */
-  }
- 
-  .validation-error {
+    flex-direction: column;
+    /* Align radio buttons vertically */
+    gap: 10px;
+    /* Adjust the gap between radio buttons */
+}
+
+.validation-error {
     display: flex;
-    color: red; 
-    font-size: 14px; 
+    color: red;
+    font-size: 14px;
     /* margin-top: 5px;   */
     margin: auto;
     width: 480px;
     height: 60px;
-  }
+}
 
+@media (max-width:780px) {
+    .accontainer {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        width: 80%;
+        background-color: white;
+        padding-bottom: 30px;
+        padding: 5px;
+        margin-left: 90px;
+        border-radius: 12px;
+    }
+
+    
+    .input-group {
+        display: inline;
+    } 
+
+
+    .input {
+        margin-left: 10 !important;
+        width: 480px;
+        height: 60px;
+        background-color: #eaeaea;
+        border-radius: 6px;
+    }
+
+    .input-group .input {
+        display: flex;
+        margin-bottom: 30px !important;
+        width: 480px;
+        height: 60px;
+        background-color: #eaeaea;
+        border-radius: 6px;
+        
+        
+    }
+
+    .input-group label {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: 90px;
+        /* Adjust the margin if necessary */
+    }
+    
+    .input-group .radioBtns {
+        display: flex;
+        flex-direction: column;
+        /* Align radio buttons vertically */
+        gap: 10px;
+        /* Adjust the gap between radio buttons */
+    }
+
+    .deregistration {
+        padding-left: 15px;
+        margin-top: 27px;
+        color: black;
+        font-size: 18px;
+        margin-left: 0px;
+    
+    }
+}

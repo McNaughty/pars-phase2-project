@@ -12,7 +12,7 @@ function Register() {
   });
 
   const [eventsData, setEventsData] = useState([]);
-  const [registeredEvents, setRegisteredEvents] = useState([]);
+  // const [registeredEvents, setRegisteredEvents] = useState([]);
 
   useEffect(() => {
     fetch("https://pars-project.onrender.com/events")
@@ -95,7 +95,7 @@ function Register() {
            <input
             className="input"
             type="text"
-            name="title"
+            name="event"
             value={formData.title}
             onChange={handleChange}
           />
