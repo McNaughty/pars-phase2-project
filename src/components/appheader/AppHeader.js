@@ -11,8 +11,10 @@ function AppHeader() {
 
   return (
     <nav>
-        <Link to="/" className="title">P.A.R.S</Link>
-        <div className="menu" onClick={setMenu}>
+        <Link to="/" className="htitle">
+          P.A.R.S
+        </Link>
+        <div className="hmenu" onClick={setMenu}>
           <span></span>
           <span></span>
           <span></span>
@@ -33,7 +35,7 @@ function AppHeader() {
       </ul>
     </nav>
   );
-}
+};
 
 
 export default AppHeader

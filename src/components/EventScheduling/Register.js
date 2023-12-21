@@ -12,7 +12,7 @@ function Register() {
   });
 
   const [eventsData, setEventsData] = useState([]);
-  const [registeredEvents, setRegisteredEvents] = useState([]);
+  // const [registeredEvents, setRegisteredEvents] = useState([]);
 
   useEffect(() => {
     fetch("https://pars-project.onrender.com/events")
@@ -164,7 +164,7 @@ function Register() {
         <h2>All Events</h2>
         <ul>
           {eventsData.map((event) => (
-              <li key={event.id}>{`${event.event} `}</li>
+              <li key={event.id}>{`${event.title} `}</li>
             ))}
         </ul>
       </div>
