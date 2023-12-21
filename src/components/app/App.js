@@ -7,17 +7,21 @@ import Modal from "../modal/Modal";
 // import ErrorPage from "./ErrorPage";
 import LandingPage from "../landing/LandingPage";
 import AppHeader from "../appheader/AppHeader";
-import "../appheader/AppHeader.css";
+// import "../appheader/AppHeader.css";
 import Register from "../EventScheduling/Register";
 import CalendarDash from "../dashboard/CalendarDash";
 
 function App() {
   return (
     // <React.StrictMode>
+    
       <Router>
-        <nav>
+        <div className="App">
           <AppHeader />
-        </nav>
+        
+        {/* <nav>
+          <AppHeader />
+        </nav> */}
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/dashboard" element={<Home />} />
@@ -29,6 +33,7 @@ function App() {
           <Route path="/calendar" element={<CalendarDash />} />
           {/* <Route path="*" element={<ErrorPage />} /> */}
         </Routes>
+        </div>
       </Router>
     // </React.StrictMode>
   );

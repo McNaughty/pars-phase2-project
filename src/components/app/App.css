@@ -1,9 +1,16 @@
 .App {
   text-align: center;
+  width: 100vh;
+  height: 100%; 
+}
+
+
+/* .App {
+  text-align: center;
   width: 700px;
   height: 650px;
-  /* width: 100%;
-  height: 100%; */
+  width: 100vh;
+  height: 100%; 
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) opx 5px 15px;
@@ -13,7 +20,7 @@
   margin-top: 70px;
   margin-left: 20px;
   
-}
+} */
 
 /* .rbc-btn-group{
   width: 250px;
